@@ -1,0 +1,122 @@
+/* Import fonts FIRST, before anything else */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Mrs+Saint+Delafield&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font-face declarations */
+@font-face {
+  font-family: "patron-bold";
+  src: url("/src/assets/patron-bold.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("https://fonts.cdnfonts.com/css/cabinet-grotesk") format("woff2");
+  font-weight: 400;
+}
+
+/* CSS Variables */
+:root {
+  --primary-font: "PP Neue Montreal", sans-serif;
+  --secondary-font: "Space Mono", monospace;
+  --tertiary-font: "Mrs Saint Delafield", serif;
+  --primary-color: #e0e0e0;
+  --secondary-color: rgba(255, 255, 255, 0.5);
+  --quote-size: 8vw;
+  --author-size: 0.75rem;
+  --cursor-size: 20px;
+  --ghost-color: #000000;
+  --eye-glow-color: #ffff00;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  box-sizing: border-box;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  letter-spacing: -0.03em;
+  position: relative;
+  color: var(--primary-color);
+  font-family: var(--primary-font);
+}
+
+/* Canvas */
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Parent Container */
+.parentBox {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background-color: transparent;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --quote-size: 5vw;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .custom-quote {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --quote-size: 4vw;
+  }
+
+  .text {
+    font-size: 0.9rem;
+  }
+
+  .custom-quote {
+    font-size: 4vw;
+  }
+}
+
+@keyframes growLine {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.animate-grow-line {
+  animation: growLine 0.6s ease-out forwards;
+  transform-origin: top;
+}
