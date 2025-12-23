@@ -1,0 +1,80 @@
+  <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 0,
+        }}
+      >
+        {/* <InteractiveWebCloth />  */}
+      </div>
+      {/* Scrollable Pages Container */}
+
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          display: "flex",
+          flexDirection: "column",
+          pointerEvents: "none",
+          backgroundColor: backgroundColor,
+          transition: "background-color 0.5s ease-out",
+        }}
+      >
+        {/* Home Page */}
+        <div
+          style={{
+            position: "relative",
+            width: "100vw",
+            height: "100vh",
+            flexShrink: 0,
+          }}
+        >
+          <HeroView onTap={(i) => {}} currentItem={0} />
+          <HeroBackground scrollProgress={scrollProgress} />
+        </div>
+        {/* About Page */}
+        <div
+          style={{
+            position: "relative",
+            width: "100vw",
+            flexShrink: 0,
+          }}
+        >
+          <AboutSection scrollProgress={scrollProgress} />
+          <HorizontalLine />
+          <CaseStudy
+            title="Papier"
+            subtitle="Papier committed to the possibility of a blank page. With a rebrand that set the platform for US expansion."
+            highlight="92%"
+            description="The new brand helped Papier secure listings in every Target store"
+            imageUrl="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop"
+          />
+        </div>
+        {/* Projects Page */}
+        <div
+          style={{
+            position: "relative",
+            width: "100vw",
+            height: "100vh",
+            flexShrink: 0,
+          }}
+        >
+          <Projects />
+        </div>
+        {/* Collaborate Page */}
+        <div
+          style={{
+            position: "relative",
+            width: "100vw",
+            height: "100vh",
+            flexShrink: 0,
+          }}
+        >
+          <HeroCollaborate />
+        </div>
+        {/* Cursor animation - Don't touch */}
+        {/* <CursorTrail /> */}
+      </div>
