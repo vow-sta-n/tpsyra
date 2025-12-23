@@ -1,6 +1,7 @@
 import "../App.css";
 import cover from "../assets/mag/002.png";
 import clip from "../assets/video/cli.mp4";
+import fig from "../assets/video/fig.mp4";
 
 export default function EditorialPage() {
   return (
@@ -12,20 +13,36 @@ export default function EditorialPage() {
           {/* Main Content Area */}
           <div className="absolute inset-0 flex flex-col items-center justify-between z-50">
             <div className="inset-0 flex flex-col items-start z-50">
-              <video
-                src={clip}
-                autoPlay
-                muted
-                playsInline
-                loop
-                width={"22%"}
-                className="pt-16 ml-40"
-              />
+              {/* CROPPING BOX */}
+              <div className="pt-7 ml-30 w-[28%] h-[130px] overflow-hidden">
+                <video
+                  src={clip}
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  className="w-full h-[135px] object-cover"
+                />
+              </div>
             </div>
             <div className="inset-0 flex flex-col items-center z-50"></div>
           </div>
         </div>
+        {/* CROPPING BOX */}
+        <div className="absolute bottom-0 right-2 z-20">
+          <div className="pt-0 ml-12 w-[68%] h-[80px] z-20 overflow-hidden">
+            <video
+              src={fig}
+              autoPlay
+              muted
+              playsInline
+              loop
+              className="w-full h-[60px] object-cover"
+            />
+          </div>
+        </div>
       </div>
+
       {/* Visual 1 */}
       <img
         src={cover}

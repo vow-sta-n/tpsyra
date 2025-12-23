@@ -117,7 +117,8 @@ function Slide({
 }: any) {
   const ref = useRef<any>(null);
 
-  const tex = useTexture(url);
+  // const tex = useTexture(url);
+  const tex = useTexture(url) as THREE.Texture;
   tex.colorSpace = THREE.SRGBColorSpace;
   tex.generateMipmaps = false;
   tex.minFilter = THREE.LinearFilter;
@@ -342,53 +343,3 @@ export default function EverySecondLandingPage() {
     </div>
   );
 }
-
-/*
-
-      {selectedIndex !== null && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center">
-
-          <div className="relative z-40  overflow-auto  bg-white/10 backdrop-blur-x">
-
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="absolute top-10 left-1/2 -translate-x-1/2 
-                  rounded-full bg-transparent text-white shadow-lg"
-            >
-              Close
-            </button>
-
-
-            <button
-              disabled={selectedIndex === 0}
-              onClick={() => setSelectedIndex((prev) => prev! - 1)}
-              className={`absolute left-6 top-1/2 -translate-y-1/2 text-white text-3xl 
-          px-4 py-2 rounded-full bg-black/60 hover:bg-black transition 
-          ${selectedIndex === 0 ? "opacity-30 cursor-not-allowed" : ""}`}
-            >
-              ‹
-            </button>
-
-
-            <button
-              disabled={selectedIndex === ALL_ARTICLES.length - 1}
-              onClick={() => setSelectedIndex((prev) => prev! + 1)}
-              className={`absolute right-6 top-1/2 -translate-y-1/2 text-white text-3xl
-          px-4 py-2 rounded-full bg-black/60 hover:bg-black transition 
-          ${
-            selectedIndex === ALL_ARTICLES.length - 1
-              ? "opacity-30 cursor-not-allowed"
-              : ""
-          }`}
-            >
-              ›
-            </button>
-
-
-            <div className="bg-transparent">
-              <ProcrastinationSpread />
-            </div>
-          </div>
-        </div>
-      )}
-*/

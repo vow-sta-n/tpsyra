@@ -1,5 +1,5 @@
 import "../App.css";
-import lad from "../assets/temp.mp4";
+import lad from "../assets/video/pros.mp4";
 
 export default function ProcrastinationSpread() {
   return (
