@@ -3,11 +3,12 @@ import { OrbitControls, useTexture } from "@react-three/drei";
 import { Suspense, useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 import "./App.css";
-import ProcrastinationSpread from "./pages/procastination";
+// import ProcrastinationSpread from "./pages/procastination";
 import NavigationPanel from "./components/navigation";
 import CoverPage from "./pages/cover";
 import BackOfCover from "./pages/backOfCover";
 import EditorialPage from "./pages/editorial";
+import SmilingPage from "./pages/smile";
 
 THREE.TextureLoader.prototype.crossOrigin = "anonymous";
 
@@ -93,7 +94,8 @@ const ARTICLE_PAGES: Record<number, React.ReactNode> = {
   0: <CoverPage />,
   1: <BackOfCover />,
   2: <EditorialPage />,
-  23: <ProcrastinationSpread />,
+  25: <SmilingPage />,
+  // 23: <ProcrastinationSpread />,
   //  7: <LoveLossSpread />,
   //  12: <StanfordPrisonSpread />,
 };
